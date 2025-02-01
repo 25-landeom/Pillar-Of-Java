@@ -1,0 +1,74 @@
+# Pillar Of  Java
+
+#Encapsulation:
+
+This principle is about bundling data (variables) and methods (functions) that operate on the data into a single unit, known as a class. It also involves restricting access to some of the object's components, often by using private access modifiers. This helps ensure the integrity of the data by only allowing modification through well-defined methods (getters and setters).
+
+#Abstraction:
+
+Abstraction allows hiding complex implementation details and showing only essential features to the user. In Java, abstraction is achieved using abstract classes or interfaces. The goal is to define "what" an object does, not "how" it does it.
+
+#Inheritance:
+
+Inheritance enables one class to inherit the fields and methods from another class, promoting code reuse and establishing a hierarchical relationship between classes. In Java, a subclass inherits from a superclass, and can override methods to provide specific behavior while retaining the functionality of the superclass.
+ 
+
+#Polymorphism:
+
+Polymorphism allows objects of different classes to be treated as objects of a common superclass. It is mainly achieved through method overriding (run-time polymorphism) or method overloading (compile-time polymorphism). Polymorphism enables the same method to behave differently based on the object it is called on.
+
+
+// 1. Encapsulation
+class Animal {
+    private String name;  
+
+  
+    public String getName() {
+        return name;
+    }
+
+    
+    public void setName(String name) {
+        this.name = name;
+    }
+
+// 2. Abstraction (abstract class)
+    public abstract void makeSound(); 
+}
+
+class Dog extends Animal {
+// 3. Inheritance 
+         (Dog inherits from Animal)
+    
+    
+// 4. Polymorphism 
+ (method overriding)
+    @Override
+    public void makeSound() {
+        System.out.println("Woof!");
+    }
+}
+
+class Cat extends Animal {
+    // 4. Polymorphism
+ (method overriding)
+    @Override
+    public void makeSound() {
+        System.out.println("Meow!");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        
+        Dog dog = new Dog();
+        dog.setName("Buddy"); 
+        System.out.println("Dog's name: " + dog.getName()); 
+        dog.makeSound(); 
+
+        Cat cat = new Cat();
+        cat.setName("Whiskers"); 
+        System.out.println("Cat's name: " + cat.getName()); 
+        cat.makeSound(); 
+    }
+}
